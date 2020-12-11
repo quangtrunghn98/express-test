@@ -1,0 +1,14 @@
+extends ../layout/comon
+
+block content
+    h1 Users
+
+    a(href="/users") Back
+    p Kết quả tìm kiếm, từ khóa: #{q}
+
+    ul
+        each user in users
+            li
+                span= user.name
+                span &nbsp
+                a(href='/users/' + user.id) view
