@@ -3,11 +3,26 @@ extends ../layout/comon
 block content
     h1 Users
 
-    a(href="/users/create" ) New
+ 
 
-    ul
-        each user in users
-            li
-                span= user.name
-                span &nbsp
-                a(href='/users/' + user.id) view
+    <form class="d-flex" , action="/users/search", method="GET">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"  name="q", value= #{q} >
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+    a(href="/users/create" )
+        <button class="btn btn-primary">Create</button>
+
+    table.table
+        thead
+            tr
+            th(scope='col') Name
+            th(scope='col') Phone
+            th(scope='col') 
+        tbody
+            each user in users
+                tr
+                    td=user.name
+                    td=user.phone
+                    td
+                        a(href='/users/' + user.id) view

@@ -13,7 +13,7 @@ module.exports.search = (req, res) => {
     let marchedUsers = users.filter((user) => {
         return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
     })
-    res.render('users/searchResult', {
+    res.render('users/index', {
         users: marchedUsers,
         q: q,
     })
