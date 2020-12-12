@@ -1,5 +1,6 @@
-const db = require('../db');
 const shortid = require('shortid');
+
+const db = require('../db');
 
 module.exports.index = (req, res) => {
     res.render('users/index', {
