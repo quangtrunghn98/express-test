@@ -4,13 +4,18 @@
   "count": 0,
   "users": [
     {
-      "name": "thinh",
-      "id": "klJjCopdk"
+      "name": "Quang Trung",
+      "phone": "032131555",
+      "id": "klJjCopdk",
+      "email": "quangtrunghn98@gmail.com",
+      "password": "123456"
     },
     {
       "name": "new name",
       "phone": "03213121",
-      "id": "TQFhhyCCk"
+      "id": "TQFhhyCCk",
+      "email": "email@gmail.com",
+      "password": "123456"
     }
   ]
 }

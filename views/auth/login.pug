@@ -1,0 +1,18 @@
+extends ../layout/comon
+
+block content
+
+    h1 Login
+
+    if erros
+        each erro in erros 
+            .alert.alert-danger= erro
+   
+    form(method="POST", action="/auth/login")
+        .mb-3
+            label.form-label(for='email') Email
+            input#email.form-control(type='text', name='email')
+            label.form-label(for='password') Password
+            input#password.form-control(type='password', name='password')
+        
+        button.btn.btn-primary Login
