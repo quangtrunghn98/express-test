@@ -1,7 +1,9 @@
 extends ../layout/comon
 
 block user
-    p=user.name
+    if user
+      p=user.name
+
 
 block content
     h1 View user
