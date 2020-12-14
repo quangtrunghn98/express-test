@@ -1,0 +1,60 @@
+extends ../layout/comon
+
+block content
+    h1 Products
+
+    if !products
+        p Page doesn't exist
+        a(href="/products") Back
+    else
+        .row
+            each product in products
+                .col-sm-3
+                    .card
+                        .card-body
+                            img.card-img-top(src=product.image, alt='Image')
+                            h5.card-title=product.name
+                            p.card-text=product.description
+                            a.btn.btn-primary(href='#') Add to cart
+            
+            
+            nav(aria-label='...')
+                ul.pagination
+                    
+                    if page==1 
+                        li.page-item.disabled
+                            a.page-link(href='#', tabindex='-1', aria-disabled='true') Previous
+                        li.page-item.active(aria-current='page')
+                        a.page-link(href='#')=page
+                        li.page-item
+                            a.page-link(href='/products?page=' + nextPage )=nextPage
+                        li.page-item
+                            a.page-link(href='/products?page=3' )=3
+                        li.page-item
+                            a.page-link(href='/products?page=' + nextPage ) Next    
+                    
+                    else if page == lastPage
+                        li.page-item
+                            a.page-link(href='/products?page=' + previousPage ) Previous
+                        li.page-item
+                            a.page-link(href='/products?page=' + (previousPage-1) )=previousPage-1
+                        li.page-item
+                            a.page-link(href='/products?page=' + previousPage )=previousPage
+                        li.page-item.active(aria-current='page')
+                            a.page-link(href='#')=page
+                        li.page-item.disabled
+                            a.page-link(href='#', tabindex='-1', aria-disabled='true') Next
+                                
+
+                    else 
+                        li.page-item
+                            a.page-link(href='/products?page=' + previousPage ) Previous
+                        li.page-item
+                            a.page-link(href='/products?page=' + previousPage )=previousPage
+                        li.page-item.active(aria-current='page')
+                            a.page-link(href='#')=page
+                        li.page-item
+                            a.page-link(href='/products?page=' + nextPage )=nextPage
+                        li.page-item
+                            a.page-link(href='/products?page=' + nextPage ) Next
+                                
